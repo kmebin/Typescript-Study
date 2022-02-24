@@ -26,4 +26,3 @@ yarn.lock
 dist
 
 app.js
-package-lock.json
