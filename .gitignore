@@ -25,4 +25,4 @@ yarn.lock
 
 dist
 
-app.js
+**/*.js
