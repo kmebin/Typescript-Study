@@ -5,7 +5,7 @@ input = 5;
 input = 'Max';
 
 if (typeof input === 'string') {
-  input = username;
+  username = input;
 }
 
 function generateError(message: string, code: number): never {
