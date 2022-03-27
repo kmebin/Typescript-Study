@@ -1,3 +1,6 @@
+/**
+ * @화살표_함수
+ */
 const add = (a: number, b = 1) => a + b;
 const printOutput = (output: number) => console.log(output);
 const printOutput2: (a: number) => void = output => console.log(output); // 함수의 타입을 명시해주는 방법
@@ -11,6 +14,9 @@ if (button) {
   button.addEventListener('click', event => console.log(event));
 }
 
+/**
+ * @전개_연산자
+ */
 const hobbies = ['Sports', 'Cooking'];
 const activeHobbies = ['Hiking'];
 const activeHobbies2 = ['Hiking', ...hobbies]
