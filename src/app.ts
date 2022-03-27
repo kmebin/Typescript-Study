@@ -24,6 +24,9 @@ const person = {
 const notCopiedPerson = person;
 const copiedPerson = { ...person };
 
+/**
+ * @나머지_매개변수
+ */
 const addNumber = (...numbers: number[]) => {
   const result = numbers.reduce((curResult, curValue) => {
     return curResult + curValue;
@@ -33,6 +36,15 @@ const addNumber = (...numbers: number[]) => {
 };
 const addedNumbers = addNumber(5, 10, 2, 3.7);
 
-console.log(addedNumbers)
+console.log(addedNumbers);
 
-export {};
+/**
+ * @비구조화_할당
+ */
+const [hobby1, hobby2, ...remainingHobbies] = activeHobbies;
+
+console.log(activeHobbies, hobby1, hobby2, remainingHobbies);
+
+const { name: firstName, age } = person;
+
+console.log(firstName, age);
