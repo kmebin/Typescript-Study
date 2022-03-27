@@ -13,3 +13,5 @@ function generateError(message: string, code: number): never {
 }
 
 generateError('서버 내부 오류', 500);
+
+export {};

@@ -17,3 +17,5 @@ console.log(combine(8, 8));
 addAndHandle(10, 20, (result) => {
   console.log(result);
 });
+
+export {};
