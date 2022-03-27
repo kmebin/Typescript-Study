@@ -24,4 +24,15 @@ const person = {
 const notCopiedPerson = person;
 const copiedPerson = { ...person };
 
+const addNumber = (...numbers: number[]) => {
+  const result = numbers.reduce((curResult, curValue) => {
+    return curResult + curValue;
+  }, 0);
+
+  return result;
+};
+const addedNumbers = addNumber(5, 10, 2, 3.7);
+
+console.log(addedNumbers)
+
 export {};
