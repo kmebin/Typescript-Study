@@ -1,6 +1,3 @@
-/**
- * @클래스
- */
 class Department {
   private employees: string[] = [];
 
@@ -20,10 +17,41 @@ class Department {
   }
 }
 
-const accounting = new Department('d1', 'Accounting');
+class ITDepartment extends Department {
+  constructor(id: string, private admins: string[]) {
+    super(id, 'IT');
+  }
 
-accounting.addEmployee('Max');
-accounting.addEmployee('Manu');
+  printAdmins() {
+    console.log(this.admins);
+  }
+}
 
-accounting.describe();
-accounting.printEmployeeInformation();
+class AccountingDepartment extends Department {
+  constructor(id: string, private reports: string[]) {
+    super(id, 'Accounting');
+  }
+
+  addReport(report: string) {
+    this.reports.push(report);
+  }
+
+  printReports() {
+    console.log(this.reports);
+  }
+}
+
+const it = new ITDepartment('d1', ['Max']);
+
+it.addEmployee('Max');
+it.addEmployee('Manu');
+
+it.describe();
+it.printEmployeeInformation();
+it.printAdmins();
+
+const accounting = new AccountingDepartment('d2', []);
+
+accounting.addReport('Something went wrong...');
+
+accounting.printReports();
