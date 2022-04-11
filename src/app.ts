@@ -1,52 +1,41 @@
 /**
- * @사용자_정의_타입_사용
+ * @교차_타입
  */
-type addFuncByType = (a: number, b: number) => number;
-
-const add1: addFuncByType = (n1: number, n2: number) => {
-  return n1 + n2;
+type Admin = {
+  name: string;
+  privileges: string[];
 };
 
-/**
- * @인터페이스_사용
- */
-interface addFuncByInterface {
-  (a: number, b: number): number;
+type Employee = {
+  name: string;
+  startDate: Date;
+};
+
+type ElevatedEmployee = Admin & Employee;
+
+const e1 = {
+  name: "Max",
+  privileges: ["create-server"],
+  startDate: new Date(),
+};
+
+// 인터페이스로 구현하는 경우
+interface IAdmin {
+  name: string;
+  privileges: string[];
 }
 
-const add2: addFuncByInterface = (n1: number, n2: number) => {
-  return n1 + n2;
+interface IEmployee {
+  name: string;
+  startDate: Date;
 }
 
-interface Named {
-  readonly name?: string;
-  outputName?: string;
-}
+interface IElevatedEmployee extends IAdmin, IEmployee {}
 
-interface Greetable extends Named {
-  greet(phrase: string): void;
-}
+type ElevatedEmployee2 = IAdmin & IEmployee; // 이것도 가능함
 
-class Person implements Greetable {
-  name?: string;
-  age = 30;
+// 유니언 타입에서의 사용
+type Combinable = string | number;
+type Numeric = number | boolean;
 
-  constructor(n?: string) {
-    if (n) this.name = n;
-  }
-
-  greet(phrase: string) {
-    if (this.name) console.log(`${phrase} ${this.name}`);
-    else console.log('Hi!')
-  }
-}
-
-const user1 = new Person('Max');
-
-user1.greet('Hi there - I am');
-console.log(user1);
-
-const user2 = new Person();
-
-user2.greet('Hi there - I am');
-console.log(user2);
+type Universial = Combinable & Numeric;
