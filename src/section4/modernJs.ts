@@ -7,25 +7,25 @@ const printOutput2: (a: number) => void = output => console.log(output); // 함�
 
 printOutput(add(5));
 
-const button = document.querySelector('button');
+const button = document.querySelector("button");
 
 if (button) {
-  button.addEventListener('click', () => {}); // 익명 함수
-  button.addEventListener('click', event => console.log(event));
+  button.addEventListener("click", () => {}); // 익명 함수
+  button.addEventListener("click", event => console.log(event));
 }
 
 /**
  * @전개_연산자
  */
-const hobbies = ['Sports', 'Cooking'];
-const activeHobbies = ['Hiking'];
-const activeHobbies2 = ['Hiking', ...hobbies]
+const hobbies = ["Sports", "Cooking"];
+const activeHobbies = ["Hiking"];
+const activeHobbies2 = ["Hiking", ...hobbies];
 
 activeHobbies.push(...hobbies); // push로도 가능
 
 const person = {
-  name: 'Max',
-  age: 30
+  name: "Max",
+  age: 30,
 };
 const notCopiedPerson = person;
 const copiedPerson = { ...person };
@@ -54,3 +54,5 @@ console.log(activeHobbies, hobby1, hobby2, remainingHobbies);
 const { name: firstName, age } = person;
 
 console.log(firstName, age);
+
+export {};
