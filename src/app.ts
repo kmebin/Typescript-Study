@@ -95,3 +95,36 @@ const useVehicle = (vehicle: Vehicle) => {
 
 useVehicle(v1);
 useVehicle(v2);
+
+/**
+ * @구별된_유니언
+ */
+// 인터페이스에서의 사용
+interface Bird {
+  type: "bird";
+  flyingSpeed: number;
+}
+
+interface Horse {
+  type: "horse";
+  runningSpeed: number;
+}
+
+type Animal = Bird | Horse;
+
+const moveAnimal = (animal: Animal) => {
+  let speed: number;
+
+  switch (animal.type) {
+    case "bird":
+      speed = animal.flyingSpeed;
+      break;
+    case "horse":
+      speed = animal.runningSpeed;
+      break;
+  }
+
+  console.log("Moving with speed: " + speed);
+};
+
+moveAnimal({ type: "bird", flyingSpeed: 10 });
