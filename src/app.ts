@@ -128,3 +128,12 @@ const moveAnimal = (animal: Animal) => {
 };
 
 moveAnimal({ type: "bird", flyingSpeed: 10 });
+
+/**
+ * @형변환
+ */
+const userInputElement = <HTMLInputElement>document.getElementById("user-input");
+const userInputElement2 = document.getElementById("user-input") as HTMLInputElement;
+
+userInputElement.value = "hi";
+userInputElement2.value = "hello";
